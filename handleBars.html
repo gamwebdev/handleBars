@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title></title>
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+<style type="text/css">
+</style>
+
+
+
+
+</head>
+<body>
+<ul class="tweets">
+<script id='handleBarsTemplate' type="handleBars/template">
+	{{#each this}}
+		<li>
+			<h4>{{author}}</h4>
+			<p>{{{tweet}}}</p>
+		</li>
+	{{/each}}	
+</script>
+</ul>
+
+
+
+<script type="text/javascript">
+ (function(){
+	var data = [
+		{
+		author:'MARCUS TRESCO',
+		tweet :'<b>i</b> am from <strong>ENGLAND</strong>'
+		},
+		
+		{
+		author:'ANDREW FLINTOFF',
+		tweet :'i am ALSO from ENGLAND'
+		}
+		
+		];
+		
+	
+	
+	var template =  Handlebars.compile($('#handleBarsTemplate').html());
+		console.log(template);
+		$('ul.tweets').append(template(data));
+	
+	
+	
+ }());
+</script>
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss_transparency by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Sep 2014 06:59:44 GMT -->
+</html>
